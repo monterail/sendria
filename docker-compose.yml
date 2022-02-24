@@ -1,0 +1,16 @@
+
+version: "3.9"
+services:
+  sendria:
+    image: ghcr.io/monterail/sendria/dev
+    build:
+      context: .
+      target: dev
+    ports:
+      - "1025:1025"
+      - "1080:1080"
+    volumes:
+      - sendria_data:/home/sendria/data
+
+volumes:
+  sendria_data:
