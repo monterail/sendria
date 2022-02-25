@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  sendria:
+    image: ghcr.io/monterail/sendria/prod
+    restart: "on-failure:10"
+    ports:
+      - 1025:1025
+      - 1080:1080
+    environment:
+      - SENDRIA_USER=monterail
+      - SENDRIA_PASS=${SENDRIA_PASS:-P@55w0rd}
+    volumes:
+      - sendria_data:/home/sendria/data
+
+volumes:
+  sendria_data:

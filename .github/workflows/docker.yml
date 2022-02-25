@@ -2,6 +2,12 @@ name: Build docker image
 
 on:
   push:
+    branches:
+      - main
+    paths:
+      - Dockerfile
+      - start.sh
+      - .github/**
   workflow_dispatch:
 
 jobs:
