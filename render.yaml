@@ -1,0 +1,15 @@
+---
+services:
+  - type: web
+    name: monteway-sendria
+    env: docker
+    region: frankfurt
+    plan: free
+    envVars:
+      - fromGroup: jaltech-staging-be-envs
+      - key: SENDRIA_USER
+        value: monterail
+      - key: SENDRIA_PASS
+        generateValue: true
+      - key: PORT
+        value: 1080
