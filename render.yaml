@@ -4,9 +4,12 @@ services:
     name: monteway-sendria
     env: docker
     region: frankfurt
-    plan: free
+    plan: starter
+    disk:
+     name: data
+     mountPath: /home/sendria/data
+     sizeGB: 1
     envVars:
-      - fromGroup: jaltech-staging-be-envs
       - key: SENDRIA_USER
         value: monterail
       - key: SENDRIA_PASS
