@@ -1,0 +1,18 @@
+---
+services:
+  - type: web
+    name: monteway-sendria
+    env: docker
+    region: frankfurt
+    plan: starter
+    disk:
+     name: data
+     mountPath: /home/sendria/data
+     sizeGB: 1
+    envVars:
+      - key: SENDRIA_USER
+        value: monterail
+      - key: SENDRIA_PASS
+        generateValue: true
+      - key: PORT
+        value: 1080
